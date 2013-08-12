@@ -20,7 +20,7 @@ $lang_dir = VP_PLUGIN_DIR . '/lang';
 load_theme_textdomain('vp_textdomain', $lang_dir);
 
 // Require Bootstrap
-require 'vafpress-framework\bootstrap.php';
+require 'vafpress-framework/bootstrap.php';
 
 /**
  * EOF
