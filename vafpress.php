@@ -16,8 +16,12 @@ defined( 'VP_PLUGIN_DIR' )     or define( 'VP_PLUGIN_DIR', plugin_dir_path( __FI
 defined( 'VP_PLUGIN_FILE' )    or define( 'VP_PLUGIN_FILE', __FILE__ );
 
 // Load Languages
-$lang_dir = VP_PLUGIN_DIR . '/lang';
-load_theme_textdomain('vp_textdomain', $lang_dir);
+add_action('plugins_loaded', 'vp_pl_load_textdomain');
+
+function vp_pl_load_textdomain()
+{
+	load_plugin_textdomain( 'vp_textdomain', false, dirname( plugin_basename( __FILE__ ) . '/lang/' ) ); 
+}
 
 // Require Bootstrap
 require 'vafpress-framework/bootstrap.php';
